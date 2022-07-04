@@ -20,5 +20,7 @@ mkdocs build -v
 
 # find ./site -type f -name "*.html" -exec sed -i -E 's/([^"]*)(assets[^"]*)/https:\/\/cdn-for-oi-wiki.billchn.com\/\2/g' {} +
 
-# npx gulp minify
+wget https://wilsonl.in/minify-html/bin/0.9.2-linux-x86_64 -O minify-html
+chmod +x ./minify-html
+./minify-html --keep-closing-tags --minify-css ./site/**/*.html
 # try to avoid netlify timeout
