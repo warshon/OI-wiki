@@ -37,7 +37,7 @@ jobs:
         run: |
           wget https://wilsonl.in/minify-html/bin/0.9.2-linux-x86_64 -O minify-html
           chmod +x ./minify-html
-          minify-html --keep-closing-tags --minify-css ./site/**/*.html
+          ./minify-html --keep-closing-tags --minify-css ./site/**/*.html
       - name: Generate redirects
         run: python scripts/gen_redirect.py
       - name: Deploy to gh-pages
